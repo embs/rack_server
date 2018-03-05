@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+docker ps --format "{{.Image}} {{.Names}}" | \
+  grep "embs/rack_server:$tag" | \
+  awk '{print $2}'
